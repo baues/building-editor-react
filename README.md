@@ -1,5 +1,7 @@
 # building-editor-react
 
+[![npm version](https://badge.fury.io/js/building-editor-react.svg)](https://badge.fury.io/js/building-editor-react)
+
 React wrapper for [building-editor](https://github.com/baues/building-editor)
 
 ## Installation
