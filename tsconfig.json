@@ -9,13 +9,13 @@
     "skipLibCheck": true,
     "declaration": true,
     "pretty": true,
+    "esModuleInterop": true,
     "newLine": "lf",
     "outDir": "dist",
     "baseUrl": "./"
   },
   "include": ["src"],
   "exclude": [
-    "node_modules",
-    "editor"
+    "node_modules"
   ]
 }

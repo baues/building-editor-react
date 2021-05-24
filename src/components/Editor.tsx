@@ -10,7 +10,7 @@ interface EditorProps {
 
 type Props = Omit<React.HTMLAttributes<HTMLDivElement>, keyof EditorProps> & EditorProps;
 
-export default function Editor({ contextMenu, config, ...others }: Props): React.ReactElement {
+const Editor: React.VFC<Props> = ({ contextMenu, config, ...others }) => {
   const { editor, setEditor } = useEditor();
 
   useEffect(() => {
@@ -27,3 +27,5 @@ export default function Editor({ contextMenu, config, ...others }: Props): React
     </>
   );
 }
+
+export default Editor;

@@ -23,7 +23,7 @@ interface Props {
   onClose: () => void;
 }
 
-export default function ContextMenuWrapper({ children, onClose }: Props): React.ReactElement {
+const ContextMenuWrapper: React.VFC<Props> = ({ children, onClose }) => {
   const { editor } = useEditor();
   const { contextMenu } = editor;
   const open = contextMenu.open && contextMenu.y !== null && contextMenu.x !== null;
@@ -54,3 +54,5 @@ export default function ContextMenuWrapper({ children, onClose }: Props): React.
     </div>
   );
 }
+
+export default ContextMenuWrapper;

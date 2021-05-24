@@ -23,7 +23,7 @@ const styles: { [index: string]: CSSProperties } = {
   },
 };
 
-export default function ContextMenuItem(props: React.ButtonHTMLAttributes<HTMLButtonElement>): React.ReactElement {
+const ContextMenuItem: React.VFC<React.ButtonHTMLAttributes<HTMLButtonElement>> = (props) => {
   const [hover, setHover] = useState(false);
 
   function handleEnter(): void {
@@ -40,3 +40,5 @@ export default function ContextMenuItem(props: React.ButtonHTMLAttributes<HTMLBu
     </button>
   );
 }
+
+export default ContextMenuItem;

@@ -2,7 +2,7 @@ import React from 'react';
 import { useInit } from '../hooks/useInit';
 import { useEditor } from '../hooks/useEditor';
 
-export default function Viewport(props: React.HTMLAttributes<HTMLDivElement>): React.ReactElement {
+const Viewport: React.VFC<React.HTMLAttributes<HTMLDivElement>> = (props) => {
   const { editor } = useEditor();
   useInit();
 
@@ -12,3 +12,5 @@ export default function Viewport(props: React.HTMLAttributes<HTMLDivElement>): R
     </div>
   );
 }
+
+export default Viewport;

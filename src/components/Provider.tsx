@@ -6,7 +6,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export default function Provider({ children }: Props): React.ReactElement {
+const Provider: React.VFC<Props> = ({ children }) => {
   const editorContext = useContext(EditorContext);
   const [editor, setEditorState] = useState<Editor>(editorContext.editor);
 
@@ -21,3 +21,5 @@ export default function Provider({ children }: Props): React.ReactElement {
 
   return <EditorContext.Provider value={{ editor, setEditor }}>{children}</EditorContext.Provider>;
 }
+
+export default Provider;

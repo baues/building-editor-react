@@ -41,7 +41,7 @@ interface Props {
   onClose: () => void;
 }
 
-export default function ContextMenu({ children, onClose }: Props): React.ReactElement {
+const ContextMenu: React.VFC<Props> = ({ children, onClose }) => {
   const { editor } = useEditor();
   const { contextMenu } = editor;
   const open = contextMenu.open && contextMenu.y !== null && contextMenu.x !== null;
@@ -72,3 +72,5 @@ export default function ContextMenu({ children, onClose }: Props): React.ReactEl
     </div>
   );
 }
+
+export default ContextMenu;

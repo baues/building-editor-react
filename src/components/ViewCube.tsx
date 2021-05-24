@@ -3,7 +3,7 @@ import { useEditor } from '../hooks/useEditor';
 
 type Props = React.HTMLAttributes<HTMLDivElement>;
 
-export default function ViewCube(props: Props): React.ReactElement {
+const ViewCube: React.VFC<Props> = (props) => {
   const { editor } = useEditor();
 
   if (!editor.viewCubeControls.visible) {
@@ -16,3 +16,5 @@ export default function ViewCube(props: Props): React.ReactElement {
     </div>
   );
 }
+
+export default ViewCube;
