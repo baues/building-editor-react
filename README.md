@@ -12,6 +12,8 @@ npm install building-editor-react
 
 ## Usage
 
+[Sample code](https://codesandbox.io/s/sad-https-ms8ob)
+
 At any parent component
 ```js
 import { Provider } from 'building-editor-react';
