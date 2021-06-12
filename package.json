@@ -1,6 +1,6 @@
 {
   "name": "building-editor-react",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "React wrapper for building-editor",
   "main": "dist/index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/baues/building-editor-react#readme",
   "peerDependencies": {
-    "building-editor": "^0.0.4",
+    "building-editor": "^0.0.5",
     "react": "^16.8.3 || ^17"
   },
   "devDependencies": {
