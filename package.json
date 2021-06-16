@@ -1,6 +1,6 @@
 {
   "name": "building-editor-react",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "React wrapper for building-editor",
   "main": "dist/index.js",
   "scripts": {
