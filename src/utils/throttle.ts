@@ -4,7 +4,6 @@ export function throttle(callback: (...args: any[]) => void, ms: number, ...args
   if (!enableCall) return;
 
   enableCall = false;
-  // eslint-disable-next-line standard/no-callback-literal
   callback(...args);
   setTimeout(() => {
     enableCall = true;

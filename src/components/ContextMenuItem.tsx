@@ -39,6 +39,6 @@ const ContextMenuItem: React.VFC<React.ButtonHTMLAttributes<HTMLButtonElement>> 
       {props.children}
     </button>
   );
-}
+};
 
 export default ContextMenuItem;

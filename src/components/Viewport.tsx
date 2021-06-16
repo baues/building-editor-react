@@ -11,6 +11,6 @@ const Viewport: React.VFC<React.HTMLAttributes<HTMLDivElement>> = (props) => {
       <div ref={(ref): HTMLCanvasElement | null => ref && ref.appendChild(editor.renderer.domElement)} />
     </div>
   );
-}
+};
 
 export default Viewport;

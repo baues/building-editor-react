@@ -26,6 +26,6 @@ const Editor: React.VFC<Props> = ({ contextMenu, config, ...others }) => {
       {contextMenu}
     </>
   );
-}
+};
 
 export default Editor;

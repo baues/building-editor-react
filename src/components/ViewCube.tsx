@@ -15,6 +15,6 @@ const ViewCube: React.VFC<Props> = (props) => {
       <div ref={(ref): HTMLDivElement | null => (ref as HTMLDivElement) && (ref as HTMLDivElement).appendChild(editor.viewCubeControls.element)} />
     </div>
   );
-}
+};
 
 export default ViewCube;
