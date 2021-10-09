@@ -1,24 +1,5 @@
-import React, { useCallback, useEffect, useRef } from 'react';
-import { useMemo } from 'react';
+import React, { useEffect, useRef, useMemo } from 'react';
 import { useEditor } from '../hooks/useEditor';
-
-export function useContextMenuClose(): () => void {
-  const editorContext = useEditor();
-  const { editor, setEditor } = editorContext;
-  const { contextMenu } = editor;
-  const open = contextMenu.open && contextMenu.y !== null && contextMenu.x !== null;
-
-  const closeContextMenu = useCallback(() => {
-    if (open) {
-      contextMenu.open = false;
-      contextMenu.x = null;
-      contextMenu.y = null;
-      setEditor(editor);
-    }
-  }, [contextMenu, editor, open, setEditor]);
-
-  return closeContextMenu;
-}
 
 function useOutsideClick(ref: React.MutableRefObject<HTMLDivElement | null>, action: () => void): void {
   const { editor } = useEditor();
@@ -61,8 +42,8 @@ const ContextMenu: React.VFC<Props> = ({ children, onClose }) => {
         flexDirection: 'column',
         borderRadius: 5,
         overflow: 'hidden',
-        top: contextMenu.y ? contextMenu.y - 2 : 0,
-        left: contextMenu.x ? contextMenu.x - 4 : 0,
+        top: contextMenu.y || 0,
+        left: contextMenu.x || 0,
       },
       menuClose: {
         display: 'none',

@@ -1,14 +1,15 @@
-import React, { useState, useContext, useCallback } from 'react';
+import React, { useEffect, useState, useContext, useCallback } from 'react';
 import { Editor } from 'building-editor';
 import { EditorContext } from '../EditorContext';
 
 interface Props {
   children: React.ReactNode;
+  editor?: Editor;
 }
 
-const Provider: React.VFC<Props> = ({ children }) => {
+const Provider: React.VFC<Props> = ({ children, editor: initialEditor }) => {
   const editorContext = useContext(EditorContext);
-  const [editor, setEditorState] = useState<Editor>(editorContext.editor);
+  const [editor, setEditorState] = useState<Editor>(initialEditor || editorContext.editor);
 
   const setEditor = useCallback(
     (newEditor: Editor) => {
@@ -21,6 +22,10 @@ const Provider: React.VFC<Props> = ({ children }) => {
     },
     [editor.config],
   );
+
+  useEffect(() => {
+    setEditor(editor);
+  }, []);
 
   return <EditorContext.Provider value={{ editor, setEditor }}>{children}</EditorContext.Provider>;
 };

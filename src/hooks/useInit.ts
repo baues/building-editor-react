@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import { useActions } from './useActions';
+import { useEditor } from './useEditor';
 
 function useInitialRender(): void {
   const { render } = useActions();
@@ -17,7 +18,23 @@ function useInitSetSceneSize(): void {
   }, []);
 }
 
+
+function useEventCatch(): void {
+  const { editor, setEditor } = useEditor();
+
+  const updateEditor = useCallback(() => {
+    setEditor(editor);
+  }, [editor, setEditor]);
+
+  useEffect(() => {
+    editor.editorControls.addEventListener('update', updateEditor);
+
+    return () => editor.editorControls.removeEventListener('update', updateEditor);
+  }, []);
+}
+
 export function useInit(): void {
   useInitialRender();
   useInitSetSceneSize();
+  useEventCatch();
 }
