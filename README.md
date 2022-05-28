@@ -91,7 +91,34 @@ const { renderer, scene, sceneHelpers, viewportCamera, raycaster, selected, hove
 
 ### useActions
 
-Many actions are available from this hooks. Check [here](https://github.com/baues/building-editor-react/blob/main/src/hooks/useActions.ts) to use them.
+Many actions are available from this hooks. Check [here](https://github.com/baues/building-editor-react/blob/main/src/hooks/useActions.ts) to use them.  
+Followings are the actions available from hooks  
+- render:()->void  
+- setScreenSize  
+- select  
+- setHovered  
+- focus  
+- addGeometry  
+- addMaterialToRefCounter  
+- addMaterial  
+- getObjectMaterial  
+- setObjectMaterial  
+- addCamera  
+- addObject  
+- removeObject  
+- addObjectAsHelper  
+- clipGlobal  
+- setTransformControlsMode  
+- updateGridHelper  
+- updateAxesHelper  
+- loadFile  
+- loadFiles  
+- loadFileFromLocal  
+- loadFilesFromLocal  
+- exportObject  
+- exportScene  
+- exportDAE  
+- clearEditor  
 
 ### useEvents
 
